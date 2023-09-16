@@ -9,19 +9,17 @@ metadata:
 spec:
   ingressClassName: nginx
   rules:
-  - host: "ingress.inefullcycle.com.br"
-    http:
-      paths:
-      - pathType: Prefix
-        path: "/"
-        backend:
-          service:
-            name: goserver-service
-            port: 
-              number: 80
+    - host: "ingress.inefullcycle.com.br"
+      http:
+        paths:
+          - pathType: Prefix
+            path: "/"
+            backend:
+              service:
+                name: goserver-service
+                port:
+                  number: 80
   tls:
-  - hosts:
-    - "ingress.inefullcycle.com.br"
-    secretName: letsencrypt-tls
-  
-  
+    - hosts:
+        - "ingress.inefullcycle.com.br"
+      secretName: letsencrypt-tls

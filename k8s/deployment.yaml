@@ -7,7 +7,7 @@ metadata:
 spec:
   selector:
     matchLabels:
-      app: goserver    
+      app: goserver
   replicas: 1
   template:
     metadata:
@@ -41,7 +41,6 @@ spec:
             failureThreshold: 1
             # initialDelaySeconds: 30
 
-
           livenessProbe:
             httpGet:
               path: /healthz
@@ -65,15 +64,15 @@ spec:
 
             - mountPath: "/go/pvc"
               name: goserver-volume
-        
+
       volumes:
         - name: goserver-volume
           persistentVolumeClaim:
             claimName: goserver-pvc
-          
+
         - name: config
           configMap:
             name: configmap-family
             items:
-            - key: members
-              path: "family.txt"
+              - key: members
+                path: "family.txt"

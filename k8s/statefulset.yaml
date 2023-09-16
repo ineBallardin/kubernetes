@@ -24,11 +24,11 @@ spec:
               name: mysql-volume
 
   volumeClaimTemplates:
-  - metadata:
-      name: mysql-volume
-    spec:
-      accessModes:
-        - ReadWriteOnce
-      resources:
-        requests:
-          storage: 5Gi
+    - metadata:
+        name: mysql-volume
+      spec:
+        accessModes:
+          - ReadWriteOnce
+        resources:
+          requests:
+            storage: 5Gi

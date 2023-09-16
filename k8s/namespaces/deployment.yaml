@@ -13,11 +13,11 @@ spec:
     spec:
       serviceAccount: server
       containers:
-      - name: server
-        image: karinenrb/hello-express
-        resources:
-          limits:
-            memory: "128Mi"
-            cpu: "500m"
-        ports:
-        - containerPort: 3000
+        - name: server
+          image: karinenrb/hello-express
+          resources:
+            limits:
+              memory: "128Mi"
+              cpu: "500m"
+          ports:
+            - containerPort: 3000
